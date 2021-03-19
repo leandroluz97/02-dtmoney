@@ -4,6 +4,7 @@ import Header from "./components/Header"
 import { GblobalStyle } from "./styles/global"
 import Modal from "react-modal"
 import { useState } from "react"
+import NewTransactionModal from "./components/NewTransactionModal"
 
 Modal.setAppElement("#root")
 
@@ -21,12 +22,10 @@ function App() {
     <>
       <Header onOpenNewTransactionsModal={handleOpenNewTransactionsModal} />
       <Dashboard />
-      <Modal
+      <NewTransactionModal
         isOpen={isNewTransactionsOpen}
         onRequestClose={handleCloseNewTransactionsModal}
-      >
-        <h2>Cadastar Transação</h2>
-      </Modal>
+      />
       <GblobalStyle />
     </>
   )
